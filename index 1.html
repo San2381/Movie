@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>movie app</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nBackground">
+    
+  </div>
+
+  
+  <div id="nav">
+    <h2>movi</h2>
+
+  <div class="menu">
+    <img onclick="menu()" src="/6015685.png" alt="">
+  </div>
+  
+  <div id="mp" class="mp">
+    <p>home</p>
+    <p>movies</p>
+    <p>top movies</p>
+    <p>english movies</p>
+  </div>
+  
+  <p id="clo" onclick="mc()">×</p>
+
+  <div class="se">
+    <input placeholder="search here" type="text" id="ys">
+    <img onclick="search()" id="si" src="/622669.png" alt="">
+  </div>
+  
+  <div id="movieI">
+    <img id="movie_poster" src="" alt="">
+    <div>
+      <p id="sti"></p>
+    </div>
+    
+  
+    <div id="movieInfo">
+
+      <div id="more_info">
+        <div id="background">
+        </div>
+      <p id="year"></p>
+      <p id="relesed"></p>
+      <p id="actors"></p>
+      <p id="runtime"></p>
+      <p id="country"></p>
+      <p id=""></p>
+      <h3>watch here</h3>
+      <iframe id="movieV" src="" frameborder="0"></iframe>
+      <p>If the movie won't play change server and try again </p>
+      </div>
+      <p id="About_movie"></p>
+
+
+    </div>
+  </div>
+  </div>
+  
+  <div id="Home">
+ 
+    <!-- popular movie -->
+    <div id="popularMovie">
+      <img id="pMovie" src="" alt="">
+      <h4 id="Ptitle"></h4>
+      <div>
+        <p id="P_info"></p>
+      </div>
+    </div>
+    
+    <!-- For you -->
+    <div id="foryou">
+      <h3>For you</h3>
+       <img id="movieOne" src="" alt="">
+       <p id="OneTitle"></p>
+
+      <img id="mivieTwo" src="" alt="">
+      <p id="TwoTitle"></p>
+
+
+      <img id="MovieThree" src="" alt="">
+      <p id="ThreeTitle"></p>
+
+      <img id="MovieFour" src="" alt="">
+      <p id="ThreeFour"></p>
+
+      <img id="MovieFive" src="" alt="">
+      <p id="ThreeFive"></p>
+
+      <img id="MovieSix" src="" alt="">
+      <p id="ThreeSix"></p>
+
+      <img id="MovieSeven" src="" alt="">
+      <p id="ThreeSeven"></p>
+
+      <img id="MovieEight" src="" alt="">
+      <p id="ThreeEight"></p>
+
+      <img id="MovieNine" src="" alt="">
+      <p id="ThreeNine"></p>
+
+      <img id="MovieTen" src="" alt="">
+      <p id="ThreeTen"></p>
+
+      <img id="MovieEleven" src="" alt="">
+      <p id="ThreeEleven"></p>
+
+
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+
+  </div>
+  
+  
+
+  
+  
+  
+  <!-- Project -->
+  <script >
+    let title = document.getElementById('sti');
+
+let about_movie = document.getElementById('About_movie');
+
+let about_infod = document.getElementById('movieInfo');
+
+let about_year = document.getElementById('year');
+
+let about_ryear = document.getElementById('relesed');
+
+let about_runtime = document.getElementById('runtime');
+
+let about_country = document.getElementById('country');
+
+let about_actors = document.getElementById('actors');
+
+let video = document.getElementById('movieV');
+
+let bb = document.getElementById('bb')
+
+
+
+title.classList.add('ds')
+about_movie.classList.add('ds')
+about_infod.classList.add('ds')
+
+
+let opacity = 100;
+let homeS = document.getElementById('Home');
+
+/*
+let yos;
+function search() {
+let data;
+  yos = document.getElementById("ys").value;
+  let url = 'https://www.omdbapi.com/?apikey=41c79867&t=' + yos
+  async function fetchdata() {
+    const response = await fetch(url)
+    data = await response.json()
+    console.log(data);
+    homeS.classList.add('ds')
+    
+    
+  
+    let movie_poster = document.getElementById("movie_poster");
+    movie_poster.src = data.Poster;
+    movie_poster.classList.add("asr");
+    
+    title.classList.remove('ds')
+    title.innerHTML = yos;
+    title.classList.add("text");
+    
+    about_infod.classList.remove('ds')
+
+    about_movie.classList.remove('ds');
+    about_movie.innerHTML = data.Plot;
+    about_movie.classList.add('about_movieST');
+    
+    about_year.innerHTML = 'Year: '+data.Year;
+
+    about_actors.innerHTML = 'actors: '+data.Actors;
+    
+    about_actors.innerHTML = 'Actors: '+data.Actors;
+    
+    about_ryear.innerHTML = 'Relesed Day: '+data.Released;
+
+    about_runtime.innerHTML = 'Runtime: '+data.Runtime;
+
+    about_country.innerHTML = 'Country: '+data.Country;
+
+    
+    
+    
+    
+    
+    
+    
+  }
+  fetchdata()
+  
+  
+
+}
+
+*/
+
+//
+let yos;
+let data;
+let url;
+
+  async function fetchdata() {
+    const response = await fetch(url)
+    data = await response.json()
+    console.log(data);
+    homeS.classList.add('ds')
+    
+
+
+    let movie_poster = document.getElementById("movie_poster");
+    movie_poster.src = data.Poster;
+    movie_poster.classList.add("asr");
+
+    title.classList.remove('ds')
+    title.innerHTML = yos;
+    title.classList.add("text");
+
+    about_infod.classList.remove('ds')
+
+    about_movie.classList.remove('ds');
+    about_movie.innerHTML = data.Plot;
+    about_movie.classList.add('about_movieST');
+
+    about_year.innerHTML = 'Year: ' + data.Year;
+
+    about_actors.innerHTML = 'actors: ' + data.Actors;
+
+    about_actors.innerHTML = 'Actors: ' + data.Actors;
+
+    about_ryear.innerHTML = 'Relesed Day: ' + data.Released;
+
+    about_runtime.innerHTML = 'Runtime: ' + data.Runtime;
+
+    about_country.innerHTML = 'Country: ' + data.Country;
+    
+    
+    video.src = 'https://multiembed.mov/?video_id='+ data.imdbID;
+    video.classList.add('videost')
+    
+    console.log(data.imdbID);
+
+  }
+
+
+
+function search() {
+  yos = document.getElementById("ys").value;
+  url = 'https://www.omdbapi.com/?apikey=41c79867&t=' + yos;
+    fetchdata()
+
+}
+
+
+//
+
+
+
+
+
+
+
+
+function mc() {
+  document.getElementById("mp").style.marginLeft = '-200px';
+  document.getElementById('ys').style.marginLeft = '150px'
+
+  var cl = document.getElementById("clo");
+  cl.style.opacity = '0';
+
+}
+
+function menu() {
+  document.getElementById("mp").style.marginLeft = '0px';
+  
+  document.getElementById('ys').style.marginLeft = '200px'
+
+  var cl = document.getElementById("clo");
+
+  cl.style.opacity = '100%';
+  cl.classList.add("ani");
+
+}
+//home
+let popularMovieI = document.getElementById('pMovie');
+
+let popularMovieTitle = document.getElementById('Ptitle');
+
+let popularMovieInfo = document.getElementById('P_info');
+
+//For you
+//poster
+let foryou = [ 
+  document.getElementById('movieOne'),
+  document.getElementById('mivieTwo'),
+  document.getElementById('MovieThree'),
+  document.getElementById('MovieFour'),
+  document.getElementById('MovieFive'),
+  document.getElementById('MovieSix'),
+  document.getElementById('MovieSeven'),
+  document.getElementById('MovieEight'),
+  document.getElementById('MovieNine'),
+  document.getElementById('MovieTen'),
+  document.getElementById('MovieEleven'),
+
+]
+
+  async function Mdata() {
+    const response = await fetch('https://www.omdbapi.com/?apikey=41c79867&t=puss in boots')
+    data = await response.json()
+    console.log(data);
+    
+    
+    popularMovieI.src = data.Poster;
+   // foryou[0].src = data.Poster;
+   // foryou[1].src = data.Poster;
+ //   foryou[2].src = data.Poster;
+    
+    popularMovieI.addEventListener('click',()=>{
+        yos = 'puss in boots';
+        url = 'https://www.omdbapi.com/?apikey=41c79867&t=' + yos;
+         fetchdata()
+         
+    })
+    
+    
+    
+    
+    
+    popularMovieTitle.innerHTML = data.Title;
+   /* foryouTitle[0].innerHTML = data.Title;
+    foryouTitle[1].innerHTML = data.Title;
+    foryouTitle[2].innerHTML = data.Title;*/
+    
+    
+    
+    popularMovieInfo.innerHTML = data.Plot;
+    
+    
+  }
+  Mdata()
+
+async function hdata() {
+    
+    const response = await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=8&genre=sci-fi')
+
+    
+    
+    data = await response.json()
+    console.log(data);
+    console.log(data.data.movies);
+    
+    foryou[0].src = data.data.movies[16].medium_cover_image;
+    foryou[1].src = data.data.movies[6].medium_cover_image;
+    foryou[2].src = data.data.movies[7].medium_cover_image;
+    foryou[3].src = data.data.movies[8].medium_cover_image;
+    foryou[4].src = data.data.movies[9].medium_cover_image;
+    foryou[5].src = data.data.movies[10].medium_cover_image;
+    foryou[6].src = data.data.movies[11].medium_cover_image;
+    foryou[7].src = data.data.movies[12].medium_cover_image;
+    foryou[8].src = data.data.movies[13].medium_cover_image;
+    foryou[9].src = data.data.movies[14].medium_cover_image;
+    foryou[10].src = data.data.movies[15].medium_cover_image;
+    foryou[11].src = data.data.movies[16].medium_cover_image;
+    
+    
+   
+    
+    
+
+}
+hdata();
+
+  </script>
+</body>
+</html>
